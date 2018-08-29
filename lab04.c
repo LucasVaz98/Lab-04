@@ -6,7 +6,7 @@
 int main()
 {
 	int nInvestiment = 0, i=0, j=0, k=0;
-	char name[TAM];
+	char name_client[TAM];
 	acao invest[TAM];
 	char buffer_name[TAM];
 	double buffer_invest;
@@ -20,16 +20,11 @@ int main()
 
 	printf("Getting started main()\n");
 
-	while(name[i-1]!=' ')
-	{
-		scanf("%c", &name[i]);
-		i++;
-	}
-	name[i-1]='~';
+	/* Entradas */
 
-	while(name[i-1]!=' ')
+	while(name_client[i-1]!='\0')
 	{
-		scanf("%c", &name[i]);
+		scanf("%c", &name_client[i]);
 		i++;
 	}
 
@@ -37,18 +32,19 @@ int main()
 
 	i=0;
 
-	while(name[i]!=' ')
+	while(name_client[i]!='\0')
 	{
-		printf("%c", name[i]);
+		printf("%c", name_client[i]);
 		i++;
 	}
 
 	printf("\n%d\n", nInvestiment);
+	
 	i=0;
 	while(i<nInvestiment)
 	{
 		printf("New Investment\n");
-		while(buffer_name[j-1]!=' ')
+		while(buffer_name[j-1]!='\0')
 		{
 			scanf("%c", &buffer_name[j]);
 			j++;
@@ -70,7 +66,7 @@ int main()
 		j=0;
 		i++;
 	}
-
+/* ========================== DEBUG =========================== */
 	i=0, j=0, k=0;
         while(i<nInvestiment)
        	{

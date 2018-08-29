@@ -14,7 +14,7 @@ acao criar_acao(char *nome, double investimento)
 	acao aux;
 	int i=0;
 
-	while(nome[i-1]!= ' ')	
+	while(nome[i-1]!= '\0')	
 	{
 		aux.nome[i]=nome[i];
 		i++;
@@ -27,11 +27,10 @@ acao criar_acao(char *nome, double investimento)
 
 acao adicionar_variacao(acao a, double variacao)
 {
-	int i=0;
-	while(a.variacoes[i]!=0)
-		i++;
+	a.variacoes[a.n_variacoes]=variacao;
+		
+	a.n_variacoes++;
 
-	a.variacoes[i]=variacao;
 	return a;
 
 }
